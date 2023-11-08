@@ -1,0 +1,12 @@
+.chat {
+    border: 1px solid lightblue;
+
+    .name {
+        border-bottom: 1px solid gray;
+    }
+
+    .from-me {
+        text-align: right;
+        background-color: lightsteelblue;
+    }
+}

@@ -1,0 +1,22 @@
+<div>
+    <div>
+        <div>Start Chat</div>
+        <button *ngFor="let friend of getFriends()" (click)="startChat(friend)">
+            {{ friend }}
+        </button>
+    </div>
+
+    <div>
+        <div *ngFor="let name of getChatNames()" class="chat">
+            <div class="name">Chat with {{name}}</div>
+            <div>
+                <div *ngFor="let message of getChat(name)">
+                  <div *ngIf="message.from !== getMyName()" class="to-me">{{message.content}}</div>
+                  <div *ngIf="message.from === getMyName()" class="from-me">{{message.content}}</div>
+                </div>
+                <textarea #msg></textarea>
+                <button (click)="sendMessage(name, msg.value)">send</button>
+            </div>
+        </div>
+    </div>
+</div>

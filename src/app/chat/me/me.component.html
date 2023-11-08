@@ -1,0 +1,8 @@
+<div *ngIf="!isRegisted()" class="me">
+    <input #usernameInput >
+    <button (click)="register()">register</button>
+</div>
+
+<div *ngIf="isRegisted()" class="me">
+    <p>{{ getMyUsername() }}<button (click)="unregister()">unregister</button></p>
+</div>
